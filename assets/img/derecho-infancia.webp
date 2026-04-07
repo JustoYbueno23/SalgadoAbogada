@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="gradientBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c2c2c" />
+      <stop offset="100%" stop-color="#1a1a1a" />
+    </linearGradient>
+    <linearGradient id="gradientFigures" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D2724C" />
+      <stop offset="100%" stop-color="#E8997A" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <rect width="400" height="300" fill="url(#gradientBg)"/>
+  
+  <g transform="translate(100, 50)">
+    <!-- Escudo protector con efecto de brillo -->
+    <path d="M60 20 C60 20 90 10 140 20 C190 30 200 60 190 100 C180 140 140 170 120 180 C100 170 60 140 50 100 C40 60 60 20 60 20 Z" 
+          fill="rgba(210, 114, 76, 0.1)" 
+          stroke="url(#gradientFigures)" 
+          stroke-width="3" 
+          filter="url(#glow)" />
+    
+    <!-- Figura adulto protector -->
+    <circle cx="60" cy="40" r="25" fill="url(#gradientFigures)"/>
+    <path d="M60 70 L60 140 M40 90 L80 90 M60 140 L40 180 M60 140 L80 180" 
+          stroke="url(#gradientFigures)" 
+          stroke-width="8" 
+          fill="none" 
+          stroke-linecap="round" />
+    
+    <!-- Figura niño 1 -->
+    <circle cx="120" cy="70" r="15" fill="url(#gradientFigures)"/>
+    <path d="M120 90 L120 130 M105 105 L135 105 M120 130 L105 155 M120 130 L135 155" 
+          stroke="url(#gradientFigures)" 
+          stroke-width="6" 
+          fill="none" 
+          stroke-linecap="round" />
+    
+    <!-- Figura niño 2 -->
+    <circle cx="160" cy="80" r="12" fill="url(#gradientFigures)"/>
+    <path d="M160 95 L160 130 M148 110 L172 110 M160 130 L148 150 M160 130 L172 150" 
+          stroke="url(#gradientFigures)" 
+          stroke-width="5" 
+          fill="none" 
+          stroke-linecap="round" />
+    
+    <!-- Figura niño 3 -->
+    <circle cx="190" cy="75" r="13" fill="url(#gradientFigures)"/>
+    <path d="M190 92 L190 130 M178 108 L202 108 M190 130 L178 152 M190 130 L202 152" 
+          stroke="url(#gradientFigures)" 
+          stroke-width="5" 
+          fill="none" 
+          stroke-linecap="round" />
+    
+    <!-- Símbolo de protección -->
+    <circle cx="125" cy="50" r="15" fill="rgba(255, 255, 255, 0.1)" />
+    <path d="M125 40 L125 60 M115 50 L135 50" 
+          stroke="#ffffff" 
+          stroke-width="4" 
+          stroke-linecap="round" />
+  </g>
+  
+  <!-- Texto con gradiente -->
+  <text x="200" y="270" font-family="Arial" font-size="20" font-weight="bold" fill="url(#gradientFigures)" text-anchor="middle">Derecho de la Infancia</text>
+</svg>

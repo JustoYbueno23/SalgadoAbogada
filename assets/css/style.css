@@ -1,0 +1,1195 @@
+/**
+ * =============================================================================
+ * SalgadoAbogada Website - Main Stylesheet
+ * =============================================================================
+ * 
+ * @file      style.css
+ * @project   SalgadoAbogada Legal Website
+ * @version   1.0
+ * @author    [Author Name]
+ * @created   [Date]
+ * @modified  [Date]
+ * 
+ * DESCRIPTION:
+ * Main stylesheet for SalgadoAbogada law firm website. Includes styles for
+ * homepage, services page, and contact page with modern glassmorphism design,
+ * animated counters, and responsive layouts.
+ *
+ * COLOR PALETTE:
+ * Primary: #D2724C (Orange/Copper)
+ * Secondary: #E8997A (Light Orange) 
+ * Background: Linear gradient from #2c2c2c to #1a1a1a
+ * Text: #ffffff (White), #cccccc (Light Gray)
+ *
+ * STRUCTURE:
+ * 1. Base Styles & Reset
+ * 2. Layout Components (Header, Footer)
+ * 3. Homepage Styles
+ * 4. Services Page Styles  
+ * 5. Contact Page Styles
+ * 6. Utilities & Animations
+ * 7. Media Queries
+ *
+ * BROWSER SUPPORT: Modern browsers (Chrome 80+, Firefox 75+, Safari 13+)
+ * =============================================================================
+ */
+
+
+/* =============================================================================
+    1. BASE STYLES & RESET
+============================================================================= */
+
+/**
+ * Global Reset
+ * Removes default browser styles for consistent cross-browser rendering
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**
+ * Body Base Styles
+ * Sets up the main background gradient, typography, and prevents horizontal scroll
+ */
+html, body {
+    background-color: #1a1a1a !important; /* SOLUCIÓN 1: Fondo oscuro obligatorio desde el inicio */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    /* SOLUCIÓN 4: Transición suave */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+
+/* =============================================================================
+    2. LAYOUT COMPONENTS
+   ============================================================================= */
+
+/**
+ * Header Component
+ * Fixed positioning with glassmorphism effect for modern appearance
+ */
+header {
+    position: relative;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+}
+
+/**
+ * Logo Container
+ * Centered logo with enhanced brightness for dark theme visibility
+ */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: auto;
+    height: 100px;
+    filter: brightness(1.2);
+    mix-blend-mode: multiply;
+}
+
+/**
+ * Navigation Component
+ * Pill-shaped navigation with glassmorphism background and hover effects
+ */
+.navegacion ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 10px 20px;
+}
+
+.navegacion li {
+    margin: 0 15px;
+}
+
+.navegacion a {
+    color: #D2724C;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.navegacion a:hover {
+    background: rgba(210, 114, 76, 0.2);
+    transform: translateY(-2px);
+}
+
+/**
+ * Footer Component
+ * Simple dark footer with consistent styling across all pages
+ */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* =============================================================================
+    3. HOMEPAGE STYLES
+============================================================================= */
+
+/**
+ * Hero Section
+ * Main landing area with background gradients and fade-in animation
+ */
+.hero-section {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+    background:
+    radial-gradient(circle at 20% 80%, rgba(210, 114, 76, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(232, 153, 122, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 60px;
+    animation: fadeIn 1.2s ease-in;
+}
+
+/**
+ * Lawyer Image Container
+ * Features decorative gradient background and hover effects
+ */
+.imagen-abogada {
+    flex: 1;
+    position: relative;
+}
+
+/* Decorative background element */
+.imagen-abogada::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    border-radius: 20px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.imagen-abogada img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.imagen-abogada:hover img {
+    transform: translateY(-5px);
+}
+
+/**
+ * Lawyer Information Section
+ * Contains main heading, specialties, and experience description
+ */
+.info-abogada {
+    flex: 1;
+    padding: 20px;
+}
+
+.info-abogada h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.info-abogada p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+/**
+ * Highlighted Text
+ * Gradient text effect for legal specialties
+ */
+.highlight-text {
+    display: inline-block;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+/**
+ * Featured Insolvency Section
+ * Highlighted section for primary service offering with glassmorphism design
+ */
+.destacado-insolvencia {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 60px 5%;
+    margin: 50px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(210, 114, 76, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.destacado-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.destacado-insolvencia h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #D2724C;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.destacado-insolvencia > .destacado-content > p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #cccccc;
+}
+
+/**
+ * Service Items Grid
+ * Three-column layout for insolvency services
+ */
+.destacado-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.destacado-item {
+    flex: 1;
+    min-width: 250px;
+    background-color: rgba(210, 114, 76, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border: 1px solid rgba(210, 114, 76, 0.2);
+    transition: all 0.3s ease;
+}
+
+.destacado-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(210, 114, 76, 0.15);
+}
+
+.destacado-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.destacado-item p {
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+/**
+ * Statistics Counter Section
+ * Glassmorphism container with animated counters for business metrics
+ */
+.seccion-contadores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin: 60px auto;
+    max-width: 1000px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Decorative gradient overlay */
+.seccion-contadores::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(210, 114, 76, 0.1), rgba(232, 153, 122, 0.1));
+    border-radius: 20px;
+    z-index: -1;
+}
+
+/**
+ * Individual Counter Items
+ * Animated statistics with gradient text and hover effects
+ */
+.item-contador {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.item-contador:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.item-contador h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+.item-contador p {
+    font-size: 1.1em;
+    color: #cccccc;
+    font-weight: 500;
+}
+
+
+/* =============================================================================
+    4. SERVICES PAGE STYLES
+   ============================================================================= */
+
+/**
+ * Services Hero Section
+ * Introduction banner for services page with gradient text
+ */
+.servicios-hero {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 60px 5%;
+    text-align: center;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.servicios-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.servicios-hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #cccccc;
+}
+
+/**
+ * Services Container
+ * Main content area with alternating layout services
+ */
+.servicios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/**
+ * Service Item Layout
+ * Flexible two-column layout with image and text content
+ */
+.servicio-item {
+    display: flex;
+    margin-bottom: 80px;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Reversed layout for alternating design */
+.servicio-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.servicio-imagen {
+    flex: 1;
+}
+
+.servicio-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Service Information Content
+ * Text content with gradient headings and structured lists
+ */
+.servicio-info {
+    flex: 1;
+}
+
+.servicio-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.servicio-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.servicio-info ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.servicio-info li {
+    margin-bottom: 8px;
+    color: #cccccc;
+}
+
+/**
+ * Methodology Section
+ * Four-step process visualization with glassmorphism cards
+ */
+.metodologia {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 60px 5%;
+    margin: 50px 0;
+    border-radius: 10px;
+}
+
+.metodologia-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.metodologia h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/**
+ * Methodology Steps Grid
+ * Four-column responsive grid for process steps
+ */
+.metodologia-pasos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/**
+ * Individual Step Cards
+ * Glassmorphism design with numbered circles and descriptive content
+ */
+.paso {
+    flex: 1;
+    min-width: 200px;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.paso-numero {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.paso h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #D2724C;
+}
+
+.paso p {
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+/**
+ * Call-to-Action Section (Services)
+ * Gradient background with prominent action button
+ */
+.cta-servicios {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(210, 114, 76, 0.3);
+    color: #ffffff;
+    padding: 60px 5%;
+    text-align: center;
+    margin: 50px 0;
+    border-radius: 10px;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-servicios h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta-servicios p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/**
+ * CTA Button Component
+ * White button with brand color text and hover effects
+ */
+.cta-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #D2724C;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =============================================================================
+    5. CONTACT PAGE STYLES
+   ============================================================================= */
+
+/**
+ * Contact Container
+ * Full-screen background image with overlay and centered content
+ */
+.contact-container {
+    position: relative;
+    background-image: url('../img/contacto.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+/**
+ * Dark Overlay
+ * Semi-transparent overlay for better text readability
+ */
+.contact-container .overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+}
+
+/**
+ * Contact Content
+ * Centered content area with contact methods and social links
+ */
+.contact-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 10px;
+    animation: fadeIn 1.2s ease-in;
+}
+
+.contact-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-family: serif;
+}
+
+.sub {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+/**
+ * Primary Contact Button (WhatsApp)
+ * Highlighted button for main contact method
+ */
+.contact-buttons .btn {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+.contact-buttons .btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+}
+
+/**
+ * Secondary Contact Options
+ * Social media and location links with icons
+ */
+.icon-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.icon-row a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.icon-row img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+.icon-row img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+}
+
+
+/* =============================================================================
+    6. UTILITIES & ANIMATIONS
+   ============================================================================= */
+
+/**
+ * Background Decorative Elements
+ * Floating animated circles for visual enhancement
+ */
+.bg-decoration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #D2724C, #E8997A);
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Positioned circles with different sizes and delays */
+.decoration-circle:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.decoration-circle:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.decoration-circle:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    right: 30%;
+    animation-delay: 4s;
+}
+
+/**
+ * Keyframe Animations
+ */
+
+/* Fade-in animation for page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(180deg); 
+    }
+}
+
+/**
+ * Counter Animation Utility
+ * Smooth transitions for animated counters
+ */
+.counter {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/**
+ * Botones Flotantes - Diseño Minimalista y Profesional
+ * Combina glassmorphism con los tonos cobre de la marca
+ */
+.contenedor-botones-flotantes {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2000;
+}
+
+.boton-flotante {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(210, 114, 76, 0.4);
+    padding: 10px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.boton-flotante img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.boton-flotante .texto-whatsapp {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.boton-flotante:hover {
+    background: rgba(210, 114, 76, 0.2);
+    border-color: #D2724C;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(210, 114, 76, 0.3);
+}
+
+/* Ajustes para móvil */
+@media (max-width: 480px) {
+    .contenedor-botones-flotantes {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+
+    .boton-flotante {
+        padding: 10px;
+    }
+
+    .boton-flotante .texto-whatsapp {
+        display: none; /* Simplificar en móvil */
+    }
+}
+/* =============================================================================
+7. MEDIA QUERIES - RESPONSIVE DESIGN MEJORADO
+============================================================================= */
+
+/* Móviles pequeños (hasta 360px) */
+@media (max-width: 360px) {
+    .header-container {
+        padding: 0 10px;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    .navegacion ul {
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+        padding: 5px 10px;
+    }
+    
+    .navegacion li {
+        margin: 3px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navegacion a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .hero-section {
+        padding: 30px 15px;
+        min-height: 70vh;
+    }
+    
+    .info-abogada h1 {
+        font-size: 1.8em;
+    }
+    
+    .info-abogada p {
+        font-size: 1em;
+    }
+    
+    .destacado-item {
+        padding: 15px;
+    }
+    
+    .destacado-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .item-contador h2 {
+        font-size: 2em;
+    }
+    
+    .seccion-contadores {
+        padding: 20px 10px;
+        margin: 30px auto;
+    }
+}
+
+/* Móviles (361px a 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    
+    .logo img {
+        height: 70px;
+    }
+    
+    .navegacion ul {
+        padding: 8px 12px;
+    }
+    
+    .navegacion a {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+    
+    .hero-section {
+        padding: 35px 15px;
+    }
+    
+    .info-abogada h1 {
+        font-size: 2em;
+    }
+    
+    .info-abogada p {
+        font-size: 1.05em;
+    }
+    
+    .destacado-item {
+        padding: 18px;
+    }
+    
+    .item-contador h2 {
+        font-size: 2.2em;
+    }
+}
+
+/* Móviles grandes y tablets pequeñas (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    .navegacion {
+        width: auto;
+    }
+    
+    .hero-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 30px;
+    }
+    
+    .info-abogada {
+        text-align: left;
+        padding: 0 15px;
+    }
+    
+    .destacado-items {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .destacado-item {
+        flex: 1 0 calc(50% - 20px);
+        min-width: 200px;
+    }
+    
+    .seccion-contadores {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .item-contador {
+        width: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablets (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-container {
+        padding: 0 30px;
+    }
+    
+    .hero-section {
+        padding: 60px 30px;
+    }
+    
+    .info-abogada h1 {
+        font-size: 2.8em;
+    }
+    
+    .destacado-item {
+        flex: 1 0 calc(33.333% - 20px);
+    }
+    
+    .item-contador {
+        width: calc(25% - 20px);
+        margin-bottom: 0;
+    }
+    
+    .item-contador h2 {
+        font-size: 2.8em;
+    }
+}
+
+/* Laptops (1025px a 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .header-container {
+        padding: 0 40px;
+    }
+    
+    .hero-section {
+        padding: 70px 40px;
+    }
+    
+    .info-abogada h1 {
+        font-size: 3.2em;
+    }
+    
+    .imagen-abogada::before {
+        top: -20px;
+        left: -20px;
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+/* Desktops (1367px a 1600px) */
+@media (min-width: 1367px) and (max-width: 1600px) {
+    .header-container {
+        padding: 0 50px;
+    }
+    
+    .hero-section {
+        padding: 80px 50px;
+    }
+    
+    .info-abogada h1 {
+        font-size: 3.5em;
+    }
+}
+
+/* Monitores grandes (más de 1600px) */
+@media (min-width: 1601px) {
+    .header-container {
+        padding: 0 60px;
+    }
+    
+    .hero-section {
+        padding: 100px 60px;
+    }
+    
+    .info-abogada h1 {
+        font-size: 4em;
+    }
+}
+
+/* Modo landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+    
+    .hero-content {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .imagen-abogada {
+        max-width: 250px;
+    }
+}
+
+/* Efectos táctiles para dispositivos sin hover */
+@media (hover: none) {
+    .destacado-item:active,
+    .item-contador:active,
+    .navegacion a:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Prevención de zoom en inputs en iOS */
+@media screen and (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Impresión */
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    .navegacion, .destacado-item:hover, .item-contador:hover {
+        transform: none !important;
+    }
+    
+    .imagen-abogada::before {
+        display: none;
+    }
+}
+

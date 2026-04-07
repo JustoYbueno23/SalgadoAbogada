@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="gradientBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c2c2c" />
+      <stop offset="100%" stop-color="#1a1a1a" />
+    </linearGradient>
+    <linearGradient id="gradientFigures" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D2724C" />
+      <stop offset="100%" stop-color="#E8997A" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <rect width="400" height="300" fill="url(#gradientBg)"/>
+  
+  <g transform="translate(80, 50)">
+    <!-- Efecto de luz para la balanza -->
+    <ellipse cx="120" cy="120" rx="120" ry="80" fill="rgba(210, 114, 76, 0.1)" filter="url(#glow)" />
+    
+    <!-- Balanza de la justicia -->
+    <line x1="120" y1="60" x2="120" y2="180" stroke="url(#gradientFigures)" stroke-width="8" stroke-linecap="round" />
+    <line x1="70" y1="80" x2="170" y2="80" stroke="url(#gradientFigures)" stroke-width="6" stroke-linecap="round" />
+    
+    <!-- Plato izquierdo (consumidor) -->
+    <circle cx="70" cy="100" r="30" fill="none" stroke="url(#gradientFigures)" stroke-width="3" />
+    <g transform="translate(55, 90)">
+      <!-- Figura persona -->
+      <circle cx="15" cy="10" r="8" fill="url(#gradientFigures)"/>
+      <path d="M15 20 L15 35 M10 25 L20 25 M15 35 L10 45 M15 35 L20 45" 
+            stroke="url(#gradientFigures)" 
+            stroke-width="2" 
+            fill="none" 
+            stroke-linecap="round" />
+    </g>
+    
+    <!-- Plato derecho (empresa) -->
+    <circle cx="170" cy="100" r="30" fill="none" stroke="url(#gradientFigures)" stroke-width="3" />
+    <g transform="translate(155, 85)">
+      <!-- Edificio empresa -->
+      <rect x="0" y="0" width="30" height="25" fill="url(#gradientFigures)"/>
+      <rect x="5" y="5" width="5" height="5" fill="white"/>
+      <rect x="15" y="5" width="5" height="5" fill="white"/>
+      <rect x="5" y="15" width="5" height="5" fill="white"/>
+      <rect x="15" y="15" width="5" height="5" fill="white"/>
+    </g>
+    
+    <!-- Documento de contrato -->
+    <g transform="translate(200, 100)">
+      <rect x="0" y="0" width="30" height="40" fill="rgba(255, 255, 255, 0.1)" stroke="#ffffff" stroke-width="1"/>
+      <line x1="5" y1="10" x2="25" y2="10" stroke="#ffffff" stroke-width="1"/>
+      <line x1="5" y1="15" x2="25" y2="15" stroke="#ffffff" stroke-width="1"/>
+      <line x1="5" y1="20" x2="25" y2="20" stroke="#ffffff" stroke-width="1"/>
+      <line x1="5" y1="25" x2="25" y2="25" stroke="#ffffff" stroke-width="1"/>
+      <line x1="5" y1="30" x2="15" y2="30" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    
+    <!-- Símbolo de protección al consumidor -->
+    <g transform="translate(20, 150)">
+      <circle cx="20" cy="20" r="18" fill="none" stroke="url(#gradientFigures)" stroke-width="2" filter="url(#glow)" />
+      <text x="20" y="25" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle">§</text>
+    </g>
+    
+    <!-- Símbolo de dinero -->
+    <g transform="translate(220, 150)">
+      <circle cx="20" cy="20" r="18" fill="none" stroke="url(#gradientFigures)" stroke-width="2" filter="url(#glow)" />
+      <text x="20" y="26" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle">$</text>
+    </g>
+  </g>
+  
+  <!-- Texto con gradiente -->
+  <text x="200" y="270" font-family="Arial" font-size="20" font-weight="bold" fill="url(#gradientFigures)" text-anchor="middle">Derecho de Consumo</text>
+</svg>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Salgado Abogada</title>
+
+    <!-- SOLUCIÓN 2: Precargar CSS para evitar parpadeos -->
+    <link rel="preload" href="../assets/css/style.css" as="style" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="../assets/img/icon2.webp" type="image/webp">
+
+    <!-- Script de respaldo para la carga suave si el JS principal tarda -->
+    <script>
+        window.addEventListener('load', function() { document.body.classList.add('loaded'); });
+        setTimeout(function() { document.body.classList.add('loaded'); }, 1000); // Forzar a los 1s por si acaso
+    </script>
+</head>
+<body>
+
+```
+<script src="../assets/js/script.js" defer></script>
+
+<div class="bg-decoration">
+    <div class="decoration-circle"></div>
+    <div class="decoration-circle"></div>
+    <div class="decoration-circle"></div>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <picture>
+            <source srcset="../assets/img/logo2.webp" type="image/webp">
+            <img src="../assets/img/logo2.webp" alt="Logo Salgado Abogada" width="160" height="80">
+        </picture>
+    </div>
+    <nav class="navegacion">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO (más limpio) -->
+<section class="servicios-hero">
+    <div class="servicios-hero-content">
+        <h1>Soluciones legales claras y efectivas</h1>
+        <p>
+            Te ayudamos a resolver problemas legales con respaldo profesional y atención personalizada.
+        </p>
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios-container">
+
+    <!-- INSOLVENCIA -->
+    <div class="servicio-item">
+        <div class="servicio-imagen">
+            <img src="../assets/img/insolvencia.webp" alt="Procesos de Insolvencia" width="400" height="300">
+        </div>
+        <div class="servicio-info">
+            <h2 style="color: #D2724C;">Problemas de deudas e insolvencia</h2>
+
+            <p>
+                Si estás pasando por dificultades económicas, te ayudamos a encontrar una solución legal clara y viable.
+            </p>
+
+            <ul>
+                <li>Ley de Segunda Oportunidad</li>
+                <li>Acuerdos extrajudiciales de pago</li>
+                <li>Concurso de acreedores</li>
+                <li>Reestructuración de deudas</li>
+                <li>Negociación con entidades financieras</li>
+            </ul>
+
+            <p><strong>Resultado:</strong> Recupera tu estabilidad financiera con respaldo legal.</p>
+        </div>
+    </div>
+    
+    <!-- FAMILIA -->
+    <div class="servicio-item reverse">
+        <div class="servicio-imagen">
+            <img src="../assets/img/derecho-familia.webp" alt="Derecho de Familia" width="400" height="300">
+        </div>
+        <div class="servicio-info">
+            <h2>Derecho de familia</h2>
+
+            <p>
+                Te acompañamos en procesos familiares con asesoría clara y enfocada en proteger tus derechos.
+            </p>
+
+            <ul>
+                <li>Divorcios y separaciones</li>
+                <li>Custodia de menores</li>
+                <li>Pensiones alimenticias</li>
+                <li>Régimen de visitas</li>
+                <li>Modificación de medidas</li>
+            </ul>
+
+            <p><strong>Resultado:</strong> Soluciones justas para tu bienestar y el de tu familia.</p>
+        </div>
+    </div>
+
+    <!-- INFANCIA -->
+    <div class="servicio-item reverse">
+        <div class="servicio-imagen">
+            <img src="../assets/img/derecho-infancia.webp" alt="Derecho de la Infancia" width="400" height="300">
+        </div>
+        <div class="servicio-info">
+            <h2>Protección de niños, niñas y adolescentes</h2>
+
+            <p>
+                Brindamos apoyo legal en situaciones que requieren proteger los derechos de menores.
+            </p>
+
+            <ul>
+                <li>Protección ante situaciones de riesgo</li>
+                <li>Representación legal de menores</li>
+                <li>Adopciones</li>
+                <li>Tutela y curatela</li>
+                <li>Defensa en procesos legales</li>
+            </ul>
+
+            <p><strong>Resultado:</strong> Defensa integral del menor con enfoque legal y humano.</p>
+        </div>
+    </div>
+
+    <!-- CONSUMIDOR -->
+    <div class="servicio-item">
+        <div class="servicio-imagen">
+            <img src="../assets/img/derecho-consumo.webp" alt="Derecho del Consumidor" width="400" height="300">
+        </div>
+        <div class="servicio-info">
+            <h2>Derecho del consumidor</h2>
+
+            <p>
+                Defendemos tus derechos frente a abusos de empresas y entidades.
+            </p>
+
+            <ul>
+                <li>Reclamaciones por productos defectuosos</li>
+                <li>Cláusulas abusivas</li>
+                <li>Reclamaciones a entidades financieras</li>
+                <li>Problemas con servicios</li>
+                <li>Asesoría en contratos</li>
+            </ul>
+
+            <p><strong>Resultado:</strong> Protección legal efectiva y soluciones justas.</p>
+        </div>
+    </div>
+</section>
+
+<!-- METODOLOGÍA (más clara y limpia) -->
+<section class="metodologia">
+    <div class="metodologia-content">
+        <h2>Cómo trabajamos</h2>
+
+        <div class="metodologia-pasos">
+            <div class="paso">
+                <div class="paso-numero">1</div>
+                <h3>Evaluación</h3>
+                <p>Analizamos tu caso y necesidades.</p>
+            </div>
+            <div class="paso">
+                <div class="paso-numero">2</div>
+                <h3>Estrategia</h3>
+                <p>Definimos la mejor solución legal.</p>
+            </div>
+            <div class="paso">
+                <div class="paso-numero">3</div>
+                <h3>Gestión</h3>
+                <p>Nos encargamos del proceso.</p>
+            </div>
+            <div class="paso">
+                <div class="paso-numero">4</div>
+                <h3>Resultado</h3>
+                <p>Buscamos la mejor solución posible.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Salgado Abogada. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- BOTONES -->
+<div class="contenedor-botones-flotantes">
+
+    <a href="https://api.whatsapp.com/send/?phone=573043578796&text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20asesor%C3%ADa." target="_blank" class="boton-flotante whatsapp">
+        <img src="../assets/img/whatsapp.webp" alt="WhatsApp">
+        <span class="texto-whatsapp">Agenda tu cita</span>
+    </a>
+
+    <a href="https://www.instagram.com/abogada_salgado" target="_blank" class="boton-flotante instagram">
+        <img src="../assets/img/instagram.webp" alt="Instagram">
+    </a>
+</div>
+```
+
+</body>
+</html>
